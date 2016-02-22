@@ -1,0 +1,116 @@
+<div class="jumbotron jumbotron-img main-color"> 
+	<div class="container-fluid"> 
+		<!-- Small boxes (Stat box) -->
+		<div class="row top-right-menu">
+			<div class="col-md-6 col-xs-6 link" ng-click="showGames()">
+				<!-- small box -->
+				<div class="small-box bg-purple" ng-class="{'hover': isShowingGames}">
+					<div class="inner text-center">
+						<h3>Schedule</h3> 
+					</div>
+					<div class="icon">
+						<i class="fa fa-thumbs-up"></i>
+					</div> 
+				</div>
+			</div><!-- ./col -->
+			<div class="col-md-6 col-xs-6 link" ng-click="showPlayers()">
+				<!-- small box -->
+				<div class="small-box bg-green" ng-class="{'hover': isShowingPlayers}"> 
+					<div class="inner text-center"> 
+						<h3 ng-if="totalPlayers === 0"><i class="fa fa-spinner fa-spin fa-lg text-center"></i></h3>
+						<h3>Players</h3>
+					</div>
+					<div class="icon">
+						<i class="fa fa-users"></i>
+					</div>   
+				</div> 
+			</div><!-- ./col --> 
+		</div><!-- /.row --> 
+
+		<div class="row" ng-if="isShowingGames">
+			<div class="">
+				<div class="box-header with-border color-white">
+					<h3 class="box-title">Games Schedule  <button class="btn btn-flat btn-default"><i class="fa fa-plus fa-2x"></i></button></h3>
+
+					<div class="box-tools pull-right"  ng-if="games">
+						<span data-toggle="tooltip" title="3 New Messages" class="badge bg-yellow">{{totalGames}}</span>
+						<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+						</button>
+						<button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle">
+							<i class="fa fa-comments"></i></button>
+						<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+						</button>
+					</div>
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body">			
+					<div ng-repeat="(gameId, gameData) in games" ng-if="games"> 
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<!-- small box -->
+							<div class="small-box bg-purple">
+								<div class="inner">
+									<h3>{{gameData.opponent | limitTo:16 }}</h3>
+									<p>{{gameData.date}}</p>
+									<p>{{gameData.venue}}</p>
+								</div>
+								<div class="icon">
+									<i class="fa fa-calendar"></i>
+								</div> 
+							</div>
+						</div> 
+					</div>
+				</div> 
+			</div>
+
+
+			<div  class="text-center" ng-if="!games">
+				<h3><i class="fa fa-spinner fa-spin fa-5x text-center"></i></h3>
+			</div>
+		</div>
+		<div class="row" ng-if="isShowingPlayers">
+			<h2>Registered Players</h2>
+			<div class="">
+				<div class="box-header with-border color-white">
+					<h3 class="box-title"> <button class="btn btn-flat btn-default"> <i class="fa fa-plus fa-2x"></i></button></h3>
+
+					<div class="box-tools pull-right"  ng-if="games">
+						<span data-toggle="tooltip" title="3 New Messages" class="badge bg-yellow">{{totalPlayers}}</span>
+						<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+						</button>
+						<button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle">
+							<i class="fa fa-comments"></i></button>
+						<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+						</button>
+					</div>
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body">			
+					<div ng-repeat="(playerId, playerData) in players" ng-if="players"> 
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<!-- small box -->
+							<div class="small-box bg-purple">
+								<div class="inner">
+									<h3>{{playerData.firstName | limitTo:8 }} {{playerData.lastName | limitTo:8 }}</h3> 
+									<p>{{playerData.email}}</p>
+									<p>{{playerData.teamName}}</p>
+								</div>
+								<div class="icon">
+									<i class="fa fa-user"></i>
+								</div> 
+							</div>
+						</div> 
+					</div>
+				</div> 
+			</div>
+
+
+			<div  class="text-center" ng-if="!games">
+				<h3><i class="fa fa-spinner fa-spin fa-5x text-center"></i></h3>
+			</div>
+		</div>
+
+	</div>
+</div> 
+
+
+

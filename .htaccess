@@ -1,0 +1,48 @@
+# Use PHP5.4 as default
+AddHandler application/x-httpd-php54 .php
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^ahqiplano\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.ahqiplano\.org$
+RewriteRule ^media$ "http\:\/\/ahqiplano\.org\/\#latest" [R=301,L,NE]
+
+
+ErrorDocument 404 /pages/notfound.html
+
+
+RewriteOptions inherit
+RewriteCond %{HTTP_HOST} ^ahqiplano\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.ahqiplano\.org$
+RewriteRule ^register\/?$ "http\:\/\/ahqiplano\.org\/\#services" [R=301,L,NE]
+
+RewriteCond %{HTTP_HOST} ^ahqiplano\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.ahqiplano\.org$
+RewriteRule ^contact$ "http\:\/\/ahqiplano\.org\/\#contact" [R=301,L,NE]
+
+RewriteCond %{HTTP_HOST} ^ahqiplano\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.ahqiplano\.org$
+RewriteRule ^teachers$ "http\:\/\/ahqiplano\.org\/\#teachers" [R=301,L,NE]
+
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+Options Indexes
+
+   
+order deny,allow
+
+Options -Indexes
+Options -MultiViews
+# For security reasons, Option followsymlinks cannot be overridden.
+#Options +FollowSymlinks
+Options +SymLinksIfOwnerMatch
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ /$1.html [L]
+
+#---------------------------------------------------
+

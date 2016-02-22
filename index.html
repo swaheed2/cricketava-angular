@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Cricket Ava</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+		<link rel="stylesheet" href="node_modules/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="node_modules/dataTables/css/dataTables.bootstrap.min.css">
+		<link rel="stylesheet" href="node_modules/font-awesome-4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="styles/css/AdminLTE.min.css">  
+		<!--//<link rel="stylesheet" href="styles/app.css">  -->	
+
+		<link rel="stylesheet" href="assets/style.css">
+
+
+
+	</head>
+	<body ng-controller="AuthCtrl"> 
+
+		<div id="loader" ng-if="user.isShowingLoader()"> 
+			<!--<i class="fa fa-circle-o-notch fa-5x fa-spin"></i>-->
+			<img src="/images/ballspin.gif"/>
+		</div>
+
+
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid"> 
+				<div class="navbar-header"> 
+					<a class="navbar-brand" ng-click="changeView('/')">
+						<img alt="Brand" src="assets/img/logo.png">
+					</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-default " id="navigationbar">
+					<ul class="nav  nav-pills navbar-right"> 
+						<div ng-if="!auth.isLoggedIn()">
+							<li class="link" ng-click="changeView('login')">  
+								<a  href> Login </a>
+							</li> 
+							<li class="link" ng-click="changeView('signup')">  
+								<a  href> Sign Up </a> 
+							</li> 
+							<li class="link" ng-click="changeView('about')">  
+								<a  href> About  </a>
+							</li>  
+						</div>
+						<div ng-if="auth.isLoggedIn() && auth.getUserProfile().type == 'player'">
+							<li role="presentation"><a href="/player">Manage</a></li>
+							<li role="presentation"><a href="/pages/profile">Profile</a></li>
+							<li role="presentation"><a href  ng-click="logout()" class = "text-danger">Sign-Out</a></li>   
+						</div>
+						<div ng-if="auth.isLoggedIn() && auth.getUserProfile().type == 'manager'">	  
+							<li role="presentation" ng-click="changeView('manager')"><a href >Manage</a></li>
+							<li role="presentation"><a href="/pages/profile">Profile</a></li>
+							<li role="presentation"><a href ng-click="logout()" class = "text-danger">Sign-Out</a></li>      
+						</div>
+					</ul> 
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>   
+
+		<!-- ngView:  -->
+		<div class="container-fluid nopadding" id="mainView" ng-view> 
+
+		</div> 
+
+
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<span class="copyright">Copyright &copy; CricketAva </span>
+					</div>
+					<div class="col-md-4">
+						<ul class="list-inline social-buttons">
+							<li><a href="https://www.facebook.com/cricketava"><i class="fa fa-twitter"></i></a>
+							</li>
+							<li><a href="https://www.facebook.com/cricketava"><i class="fa fa-facebook"></i></a>
+							</li>
+							<li><a href="https://www.facebook.com/cricketava"><i class="fa fa-linkedin"></i></a>
+							</li>
+						</ul>
+					</div> 
+					<div class="col-md-4">
+						<ul class="list-inline quicklinks">
+							<li><a href="#">Privacy Policy</a>
+							</li>
+							<li><a href="#">Terms of Use</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+
+
+
+
+		<!-- build:js scripts/vendor.js -->
+		<!-- npm:js -->
+		<script src="node_modules/jquery/jquery-1.11.3.min.js"></script> 
+		<script src="node_modules/angular/angular.min.js"></script>  
+		<script src="node_modules/angular/angular-route/angular-route.min.js"></script> 
+		<script src="node_modules/hammer/hammer.min.js"></script> 
+		<script src="node_modules/angular/angular-gestures.min.js"></script>
+		<script src="node_modules/dataTables/jquery.dataTables.min.js"></script>  
+		<script src="node_modules/dataTables/dataTables.bootstrap.min.js"></script>
+		<script src="node_modules/angular/angular-ui/ui-bootstrap-min.js"></script>  
+		<script src="node_modules/bootstrap/bootstrap.min.js"></script>     
+
+
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script> 
+		<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+
+		<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script> 
+		<script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+
+
+		<!-- endnpm -->
+
+		<!-- endbuild -->
+
+
+		<script src="js/bootstrap.js"></script>     
+		<script src="js/modules.js"></script>
+
+		<script src="js/app.js"></script>
+		<script src="js/services.js"></script>
+		<script src="js/controllers.js"></script>
+		<script src="js/auth.js"></script>
+		<script src="js/user.js"></script>
+
+	</body>
+</html>

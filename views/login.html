@@ -1,0 +1,45 @@
+<div class="jumbotron jumbotron-img main-color" id="loginForm"> 
+	<div class="container-fluid">
+		<div class="row">
+			<div class="modal-content  col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4  ">
+				<div class="modal-header"> 
+					<h1 class="text-center">Login</h1>
+				</div>
+				<div class="modal-body">
+					<form class="form col-md-12 center-block">
+						<div class="form-group">
+							<input type="email" 
+								   ng-model="email"
+								   id="username" 
+								   name="username" 
+								   class="form-control input-lg" placeholder="Email">
+						</div>
+						<div class="form-group">
+							<input 
+								   type="password" 
+								   ng-model="password"
+								   id="password" 
+								   name="password"
+								   class="form-control input-lg" placeholder="Password">
+						</div>
+						<div class="form-group">
+							<button 
+									ng-click="logIn()"
+									class="btn btn-primary btn-lg btn-block">
+								Sign In
+							</button>
+							<span class="pull-right" ng-click="changeView('signup')">Register</span>
+							<span ng-click="changeView('password-reset')">Forgot password?</span>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<div class="col-md-12">
+						<button class="btn" ng-click="changeView('/')">Back</button>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>	
+</div> 
+

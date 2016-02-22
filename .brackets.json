@@ -1,0 +1,26 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/sass-bootstrap/js/tab.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/speed/benchmark.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/js/accounts.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/js/app.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/json3/lib/json3.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/src/dimensions.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/src/exports.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/build/release-notes.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/js/accounts-services/accounts-pager.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/sass-bootstrap/js/modal.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/sass-bootstrap/js/transition.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/src/event-alias.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/src/attributes.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/src/event.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/src/deprecated.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/src/data.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/src/queue.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/src/offset.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/src/serialize.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/src/css.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/jquery/src/support.js",
+        "/home/swaheed/Projects/mblhoss/c3c/www/bower_components/sass-bootstrap/js/tooltip.js"
+    ]
+}

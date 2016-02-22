@@ -1,0 +1,1 @@
+browserify -r coax -r fastclick -r > js/modules.js
